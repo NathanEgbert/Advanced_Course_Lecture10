@@ -24,7 +24,6 @@
     <Folder Include="ExternalDrivers\" />
     <Folder Include="Clients\" />
     <Folder Include="Services\" />
-    <Folder Include="Pages\" />
   </ItemGroup>
 
 </Project>
