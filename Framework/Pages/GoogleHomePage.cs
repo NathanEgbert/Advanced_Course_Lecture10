@@ -19,9 +19,8 @@ namespace Framework.Pages
         //returning the GoogleResultsPage to use for fluent approach in the test
        public GoogleResultsPage SearchText(string textToSearch)
         {
-            EnterText(searchInput, textToSearch);
-            Thread.Sleep(3000);
-            Click(btnSearchButton);
+            EnterText(searchInput, textToSearch, TimeSpan.FromSeconds(5));
+            Click(btnSearchButton, TimeSpan.FromSeconds(5));
 
             //returning to use GetResultsMethod in test class
             return new GoogleResultsPage(Driver);
