@@ -9,8 +9,6 @@ namespace Tests.UITests
 {
     public class UIBaseTest
     {
-        Pages _pages;
-
         [SetUp]
         public void Test_Setup()
         {
@@ -18,8 +16,8 @@ namespace Tests.UITests
             DriverContext = driverFactory.OpenBrowser();
             DriverContext.Manage().Window.Maximize();
             DriverContext.Url = "http://www.google.com";
-            _pages = new Pages(DriverContext);
-            _pages.PageRegistration();
+            PageContext = new Pages(DriverContext);
+            PageContext.PageRegistration();
         }
 
         [TearDown]
@@ -30,13 +28,7 @@ namespace Tests.UITests
 
         protected IWebDriver DriverContext { get; set; }
 
-        protected Pages PageContext
-        {
-            get
-            {
-                return _pages;
-            }
-        }
+        protected Pages PageContext { get; private set; }
 
     }
 }

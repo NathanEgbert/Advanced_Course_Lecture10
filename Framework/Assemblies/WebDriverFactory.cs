@@ -10,10 +10,7 @@ namespace Framework.Assemblies
     {
         private IWebDriver driver;
 
-        public WebDriverFactory() 
-        {
-
-        }
+        public WebDriverFactory() { }
 
         public IWebDriver OpenBrowser()
         {

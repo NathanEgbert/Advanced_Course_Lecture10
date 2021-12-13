@@ -10,14 +10,18 @@ namespace Framework.Pages
     public class GoogleHomePage : BasePage
     {
 
+
+        By searchInput = By.XPath("//input[@title='Search']");
+        By btnSearchButton = By.XPath("//input[@value='Google Search']");
+
         public GoogleHomePage(IWebDriver driver) : base(driver){}
 
         //returning the GoogleResultsPage to use for fluent approach in the test
        public GoogleResultsPage SearchText(string textToSearch)
         {
-            EnterText(By.XPath("//input[@title='Search']"), textToSearch);
+            EnterText(searchInput, textToSearch);
             Thread.Sleep(3000);
-            Click(By.XPath("//input[@value='Google Search']"));
+            Click(btnSearchButton);
 
             //returning to use GetResultsMethod in test class
             return new GoogleResultsPage(Driver);
